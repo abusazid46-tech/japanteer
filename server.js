@@ -753,20 +753,18 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.get('/results.html', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'results.html'));
-});
+const htmlPages = [
+    'results', 'common', 'dreams', 'admin',
+    'calendar', 'hitnumbers', 'predict', 'predictions', 'social', 'winstrategy'
+];
 
-app.get('/common.html', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'common.html'));
-});
-
-app.get('/dreams.html', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'dreams.html'));
-});
-
-app.get('/admin.html', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'admin.html'));
+htmlPages.forEach(page => {
+    app.get(`/${page}.html`, (req, res) => {
+        res.sendFile(path.join(__dirname, 'public', `${page}.html`));
+    });
+    app.get(`/${page}`, (req, res) => {
+        res.sendFile(path.join(__dirname, 'public', `${page}.html`));
+    });
 });
 
 // ============ ERROR HANDLING ============

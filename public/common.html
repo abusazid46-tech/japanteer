@@ -196,7 +196,9 @@
     </footer>
 
     <script>
-        const API_BASE_URL = 'https://japanteer.onrender.com';
+        const API_BASE_URL = (typeof window !== 'undefined' && window.location.origin && window.location.origin !== 'null' && window.location.protocol.startsWith('http'))
+            ? window.location.origin
+            : '';
 
         // Date
         const today = new Date();
@@ -260,7 +262,7 @@ function connectSSE() {
         eventSource.close();
     }
     
-    const backendUrl = 'https://teer-website-1.onrender.com';
+    const backendUrl = API_BASE_URL;
     console.log('🔄 Connecting to SSE at:', `${backendUrl}/api/events`);
     
     eventSource = new EventSource(`${backendUrl}/api/events`);
