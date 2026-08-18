@@ -35,29 +35,29 @@
 
         /* ── HEADER ── */
         .site-header {
-            background: linear-gradient(90deg, #1a8fa0 0%, #16b0c8 100%);
-            padding: 12px 16px;
+            background: linear-gradient(90deg, #e65100 0%, #ff6d00 100%);
+            padding: 10px 16px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
         }
         .site-header .logo-icon {
-    width: 44px; height: 44px;
-    background: #fff;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 22px;
-    flex-shrink: 0;
-    overflow: hidden;
-    padding: 6px;
-}
-.site-header .logo-icon img {
-    width: 100%; height: 100%;
-    object-fit: contain;
-}
+            width: 56px; height: 56px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            overflow: hidden;
+            padding: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+        }
+        .site-header .logo-icon img {
+            width: 100%; height: 100%;
+            object-fit: contain;
+        }
         .site-header h1 {
             font-family: 'Oswald', sans-serif;
-            font-size: 1.5rem;
+            font-size: 1.55rem;
             color: #fff;
             letter-spacing: 1px;
             margin: 0;
@@ -108,10 +108,10 @@
             height: 36px;
         }
         .teer-table .header-row th {
-            background: #4fc3a1;
-            color: #111;
+            background: #f25100;
+            color: #fff;
             font-size: 1rem;
-            font-weight: 400;
+            font-weight: 600;
             letter-spacing: 0.8px;
             height: 36px;
         }
@@ -162,21 +162,39 @@
             display: block;
         }
 
-        /* ── DISCLAIMER ── */
-        .disclaimer-wrap {
+        /* ── PROMO REDIRECT LINK ── */
+        .promo-link-wrap {
             padding: 0 12px;
             max-width: 960px;
             margin: 16px auto 20px;
         }
-        .disclaimer {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            border-radius: 6px;
-            padding: 12px 14px;
-            font-size: 0.82rem;
-            color: #555;
+        .promo-link-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #ff6d00 0%, #f25100 100%);
+            color: #fff !important;
+            text-decoration: none !important;
+            padding: 13px 18px;
+            border-radius: 8px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.05rem;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            text-align: center;
+            box-shadow: 0 4px 14px rgba(242, 81, 0, 0.35);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
         }
-        .disclaimer strong { color: #333; }
+        .promo-link-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(242, 81, 0, 0.5);
+            background: linear-gradient(135deg, #ff7b1a 0%, #d84315 100%);
+        }
+        .promo-link-box .promo-domain {
+            text-decoration: underline;
+            font-weight: 700;
+        }
 
         /* ── FOOTER ── */
         footer {
@@ -252,7 +270,7 @@
 
     <!-- HEADER -->
     <header class="site-header">
-        <div class="logo-icon"><img src="logo.png" alt=" Night Teer Logo"></div>
+        <div class="logo-icon"><img src="logo.png" alt="Japan Teer Logo"></div>
         <h1> JAPAN TEER</h1>
     </header>
 
@@ -262,7 +280,7 @@
             <div class="result-date-row" id="currentDate">--/--/----</div>
             <table class="teer-table">
                 <tr class="loc-row">
-                    <td colspan="2">JAPAN TEER RESULS TODAY</td>
+                    <td colspan="2">JAPAN TEER RESULTS TODAY</td>
                 </tr>
                 <tr class="header-row">
                     <th>F/R(4:30PM)</th>
@@ -310,14 +328,11 @@
         </div>
     </div>
 
-
-    <!-- DISCLAIMER -->
-    <div class="disclaimer-wrap">
-        <div class="disclaimer">
-            <strong>⚠️ Disclaimer:</strong> This website is for informational and entertainment purposes only.
-            The numbers displayed are based on calculations and dream interpretations.
-            There is no guarantee of accuracy.
-        </div>
+    <!-- VISIT JAPAN NIGHT TEER LINK -->
+    <div class="promo-link-wrap">
+        <a href="https://www.japannightteer.com" target="_blank" rel="noopener noreferrer" class="promo-link-box">
+            <span>VISIT OUR JAPAN NIGHT TEER PAGE <span class="promo-domain">www.japannightteer.com</span></span>
+        </a>
     </div>
 
     <!-- SOCIAL MEDIA LINKS -->
@@ -344,7 +359,7 @@
     <!-- FOOTER -->
     <footer>
         <p>&copy; Japan Teer. All rights reserved.</p>
-        <p>Unofficial fan website | Results are for informational purposes only</p>
+        <p>Official fan website | Results are for informational purposes only</p>
     </footer>
 
     <script>
